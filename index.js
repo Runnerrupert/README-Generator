@@ -2,6 +2,8 @@
 import fs from 'fs';
 import inquirer from 'inquirer';
 
+import generateMarkdown from './utils/generateMarkdown.js';
+
 // TODO: Create an array of questions for user input
 const questions = ["What is your the Title of your Project?", "What is a Description of your Project?", 
     "How do you Install your Project?", "How do you Use your Project?", "What is your Project License?", 
@@ -59,7 +61,10 @@ inquirer .prompt([
         message: questions[7],
     },
 ])
-
+    
+    .then((response) => {
+        writeToFile('README.md', generateMarkdown(response))
+    })
 }
 
 // Function call to initialize app
