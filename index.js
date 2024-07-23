@@ -7,7 +7,7 @@ import generateMarkdown from './utils/generateMarkdown.js';
 // TODO: Create an array of questions for user input
 const questions = ["What is your the Title of your Project?", "What is a Description of your Project?", 
     "How do you Install your Project?", "How do you Use your Project?", "What is your Project License?", 
-    "Who are your Contributors?", "What are your Tests?", "Questions?"];
+    "Who are your Contributors?", "What are your Tests?", "What is your GitHub Username?", "What is your Email Address?"];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
@@ -43,7 +43,7 @@ inquirer .prompt([
         name: 'license',
         type: 'rawlist',
         message: questions[4],
-        choices: [{name: 'MIT', value: 'mit'}, {name: 'ISC', value: 'isc'},]
+        choices: [{name: 'MIT', value: 'MIT'}, {name: 'ISC', value: 'ISC'},]
     },
     {
         name: 'contributors',
@@ -56,9 +56,14 @@ inquirer .prompt([
         message: questions[6],
     },
     {
-        name: 'questions',
+        name: 'username',
         type: 'input',
         message: questions[7],
+    },
+    {
+        name: 'email',
+        type: 'input',
+        message: questions[8],
     },
 ])
     
