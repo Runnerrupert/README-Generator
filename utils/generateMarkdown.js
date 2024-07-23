@@ -3,7 +3,7 @@
 function renderLicenseBadge(license) {
   const badgeMIT = "![Static Badge](https://img.shields.io/badge/MIT%20License-blue)";
   const badgeISC = "![Static Badge](https://img.shields.io/badge/ISC%20License-yellow)";
-  
+
   if (license === "MIT") {
     return badgeMIT;
   } else if (license === "ISC") {
@@ -39,7 +39,7 @@ if (license != "") {
 function generateMarkdown(data) {
   return `# ${data.title}
 
-## Table of Contents
+### Table of Contents
 - [Description](#description)
 - [How to Install](#how-to-install)
 - [Usage](#usage)
@@ -53,40 +53,33 @@ function generateMarkdown(data) {
 
 ${data.description}
 
-
-
-
 ## How to Install
 
 ${data.installation}
-
-
 
 ## Usage
 
 ${data.usage}
 
-
 ## License
 
 ${renderLicenseSection(data.license)}
-
 
 ## Contributors
 
 ${data.contributors}
 
-
-
 ## Tests
 
 ${data.tests}
 
-
-
 ## Questions
 
-${data.questions}
+My Github: https://github.com/${data.username}
+
+My Email Address: ${data.email}
+
+You can contact me using the links above if you have any questions about ${data.title}.
 
 `;
 }
