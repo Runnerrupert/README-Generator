@@ -8,7 +8,10 @@ const questions = ["What is your the Title of your Project?", "What is a Descrip
     "Who are your Contributors?", "What are your Tests?", "Questions?"];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) =>
+        err ? console.error(err) : console.log('README.md Generated!'));
+}
 
 // TODO: Create a function to initialize app
 function init() {
