@@ -66,30 +66,43 @@ ${renderLicenseBadge(data.license)}
 - [Tests](#tests)
 - [Questions](#questions)
 
+---
 
 ## Description
 
 ${data.description}
 
+---
+
 ## How to Install
 
 ${data.installation}
+
+---
 
 ## Usage
 
 ${data.usage}
 
+---
+
 ## License
 
 ${renderLicenseSection(data.license)}
+
+---
 
 ## Contributors
 
 ${data.contributors}
 
+---
+
 ## Tests
 
 ${data.tests}
+
+---
 
 ## Questions
 
@@ -97,7 +110,7 @@ My Github: https://github.com/${data.username}
 
 My Email Address: ${data.email}
 
-You can contact me using the links above if you have any questions about ${data.title}.
+You can contact me using my Github link or via Email if you have any questions about ${data.title}.
 
 `;
 }

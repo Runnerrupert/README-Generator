@@ -31,7 +31,7 @@ inquirer
     .prompt(questions)
     
     .then((response) => {
-        writeToFile('README.md', generateMarkdown(response))
+        writeToFile('./generatedFiles/README.md', generateMarkdown(response))
     })
 }
 
