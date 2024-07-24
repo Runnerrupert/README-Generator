@@ -5,9 +5,16 @@ import inquirer from 'inquirer';
 import generateMarkdown from './utils/generateMarkdown.js';
 
 // TODO: Create an array of questions for user input
-const questions = ["What is your the Title of your Project?", "What is a Description of your Project?", 
-    "How do you Install your Project?", "How do you Use your Project?", "What is your Project License?", 
-    "Who are your Contributors?", "What are your Tests?", "What is your GitHub Username?", "What is your Email Address?"];
+const questions = [
+    { name: 'title', type: 'input', message: "What is your the Title of your Project?"},
+    { name: 'description', type: 'input', message: "What is a Description of your Project?"},
+    { name: 'installation', type: 'input', message: "How do you Install your Project?"},
+    { name: 'usage', type: 'input', message: "How do you Use your Project?"},
+    { name: 'license', type: 'rawlist', message: "What is your Project License?", choices: [{name: 'MIT', value: 'MIT'}, {name: 'ISC', value: 'ISC'}]},
+    { name: 'contributors', type: 'input', message: "Who are your Contributors?"},
+    { name: 'tests', type: 'input', message: "What are your Tests?"},
+    { name: 'username', type: 'input', message: "What is your GitHub Username?"},
+    { name: 'email', type: 'input', message: "What is your Email Address?"}]
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
@@ -18,54 +25,8 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
 
-inquirer .prompt([
-    {
-        name: 'title',
-        type: 'input',
-        message: questions[0],
-    },
-    {
-        name: 'description',
-        type: 'input',
-        message: questions[1],
-    },
-    {
-        name: 'installation',
-        type: 'input',
-        message: questions[2],
-    },
-    {
-        name: 'usage',
-        type: 'input',
-        message: questions[3],
-    },
-    {
-        name: 'license',
-        type: 'rawlist',
-        message: questions[4],
-        choices: [{name: 'MIT', value: 'MIT'}, {name: 'ISC', value: 'ISC'},]
-    },
-    {
-        name: 'contributors',
-        type: 'input',
-        message: questions[5],
-    },
-    {
-        name: 'tests',
-        type: 'input',
-        message: questions[6],
-    },
-    {
-        name: 'username',
-        type: 'input',
-        message: questions[7],
-    },
-    {
-        name: 'email',
-        type: 'input',
-        message: questions[8],
-    },
-])
+inquirer 
+    .prompt(questions)
     
     .then((response) => {
         writeToFile('README.md', generateMarkdown(response))

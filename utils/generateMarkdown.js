@@ -3,7 +3,7 @@
 function renderLicenseBadge(license) {
   const badgeMIT = "![Static Badge](https://img.shields.io/badge/MIT%20License-blue)";
   const badgeISC = "![Static Badge](https://img.shields.io/badge/ISC%20License-yellow)";
-
+  
   if (license === "MIT") {
     return badgeMIT;
   } else if (license === "ISC") {
@@ -15,6 +15,8 @@ function renderLicenseBadge(license) {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
+
+// This function should return a link to ex. (Learning about MIT license)
 function renderLicenseLink(license) {
   if (license != "") {
   
