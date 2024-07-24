@@ -10,13 +10,15 @@ const questions = [
     { name: 'description', type: 'input', message: "What is a Description of your Project?"},
     { name: 'installation', type: 'input', message: "How do you Install your Project?"},
     { name: 'usage', type: 'input', message: "How do you Use your Project?"},
-    { name: 'license', type: 'rawlist', message: "What is your Project License?", choices: [{name: 'MIT', value: 'MIT'}, {name: 'ISC', value: 'ISC'}]},
+    { name: 'license', type: 'rawlist', message: "What is your Project License?", choices: [{name: 'MIT', value: 'MIT'}, {name: 'ISC', value: 'ISC'}, {name: 'GPL', value: 'GPL'}, {name: 'BSD', value: 'BSD'},]},
     { name: 'contributors', type: 'input', message: "Who are your Contributors?"},
     { name: 'tests', type: 'input', message: "What are your Tests?"},
     { name: 'username', type: 'input', message: "What is your GitHub Username?"},
     { name: 'email', type: 'input', message: "What is your Email Address?"}]
 
 // TODO: Create a function to write README file
+
+// Create a Directory to write the README.md files to - Research fs.writeFile -
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) =>
         err ? console.error(err) : console.log('README.md Generated!'));
