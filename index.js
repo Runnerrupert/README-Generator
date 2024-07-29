@@ -5,7 +5,7 @@ import generateMarkdown from './utils/generateMarkdown.js';
 
 // An array of questions containing a name, type and message for each question
 const questions = [
-    { name: 'title', type: 'input', message: "What is your the Title of your Project?"},
+    { name: 'title', type: 'input', message: "What is the Title of your Project?"},
     { name: 'description', type: 'input', message: "What is a Description of your Project?"},
     { name: 'installation', type: 'input', message: "How do you Install your Project?"},
     { name: 'usage', type: 'input', message: "How do you Use your Project?"},
