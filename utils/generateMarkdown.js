@@ -1,5 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+// Renders the badge depending on which badge is chosen by the user
 function renderLicenseBadge(license) {
   const badgeMIT = "![Static Badge](https://img.shields.io/badge/MIT%20License-blue)";
   const badgeISC = "![Static Badge](https://img.shields.io/badge/ISC%20License-yellow)";
@@ -19,8 +18,7 @@ function renderLicenseBadge(license) {
   }
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+// Creates a link depending on which license is chosen for better understanding each license
 function renderLicenseLink(license) {
   const linkMIT = "https://memgraph.com/blog/what-is-mit-license";
   const linkISC = "https://opensource.org/license/isc-license-txt";
@@ -40,8 +38,7 @@ function renderLicenseLink(license) {
   }
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// Creates the license section in the generated README.md file and adds the link
 function renderLicenseSection(license) {
   const licenseMessage = `For more information about the ${license} license, use this link!\n ${renderLicenseLink(license)}`;
   if (license != "") {
@@ -51,7 +48,7 @@ function renderLicenseSection(license) {
   }
 }
 
-// TODO: Create a function to generate markdown for README
+// Structures the markdown file with all information provided by the user
 function generateMarkdown(data) {
   return `# ${data.title}
 
@@ -115,4 +112,5 @@ You can contact me using my Github link or via Email if you have any questions a
 `;
 }
 
+// Makes generateMarkdown available to all files that import it
 export default generateMarkdown;

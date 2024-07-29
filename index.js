@@ -1,10 +1,9 @@
-// TODO: Include packages needed for this application
+// Imports from other packages or files
 import fs from 'fs';
 import inquirer from 'inquirer';
-
 import generateMarkdown from './utils/generateMarkdown.js';
 
-// TODO: Create an array of questions for user input
+// An array of questions containing a name, type and message for each question
 const questions = [
     { name: 'title', type: 'input', message: "What is your the Title of your Project?"},
     { name: 'description', type: 'input', message: "What is a Description of your Project?"},
@@ -16,22 +15,19 @@ const questions = [
     { name: 'username', type: 'input', message: "What is your GitHub Username?"},
     { name: 'email', type: 'input', message: "What is your Email Address?"}]
 
-// TODO: Create a function to write README file
-
-// Create a Directory to write the README.md files to - Research fs.writeFile -
+// Blueprint for writing data to generated-files directory.
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) =>
         err ? console.error(err) : console.log('README.md Generated!'));
 }
 
-// TODO: Create a function to initialize app
+// Prompts the user the questions contained within the object array and writes all answers using the generateMarkdown method
 function init() {
-
 inquirer 
     .prompt(questions)
     
     .then((response) => {
-        writeToFile('./generatedFiles/README.md', generateMarkdown(response))
+        writeToFile('./generated-files/README.md', generateMarkdown(response))
     })
 }
 
